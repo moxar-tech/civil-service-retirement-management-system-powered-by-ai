@@ -1,26 +1,159 @@
 @import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Primary Uganda Colors */
+  --uganda-black: #000000;
+  --uganda-yellow: #fcdc04;
+  --uganda-red: #d90000;
+
+  /* Extended Uganda-inspired Palette */
+  --uganda-sun: #ffd700;
+  --uganda-sunlight: #fff9c4;
+  --uganda-earth: #8b4513;
+  --uganda-grass: #2e8b57;
+  --uganda-sky: #1e90ff;
+  --uganda-cloud: #f8f9fa;
+
+  /* Neutral Colors */
+  --uganda-charcoal: #2c2c2c;
+  --uganda-slate: #4a5568;
+  --uganda-gray: #718096;
+  --uganda-silver: #e2e8f0;
+  --uganda-cream: #fafafa;
+
+  /* Semantic Colors */
+  --uganda-success: #38a169;
+  --uganda-warning: #d69e2e;
+  --uganda-error: #e53e3e;
+  --uganda-info: #3182ce;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+@layer base {
+  /* Custom color classes for easy usage */
+  .bg-uganda-black {
+    background-color: var(--uganda-black);
+  }
+  .bg-uganda-yellow {
+    background-color: var(--uganda-yellow);
+  }
+  .bg-uganda-red {
+    background-color: var(--uganda-red);
+  }
+  .bg-uganda-sun {
+    background-color: var(--uganda-sun);
+  }
+  .bg-uganda-grass {
+    background-color: var(--uganda-grass);
+  }
+  .bg-uganda-sky {
+    background-color: var(--uganda-sky);
+  }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  .text-uganda-black {
+    color: var(--uganda-black);
+  }
+  .text-uganda-yellow {
+    color: var(--uganda-yellow);
+  }
+  .text-uganda-red {
+    color: var(--uganda-red);
+  }
+  .text-uganda-sun {
+    color: var(--uganda-sun);
+  }
+  .text-uganda-grass {
+    color: var(--uganda-grass);
+  }
+  .text-uganda-sky {
+    color: var(--uganda-sky);
+  }
+
+  .border-uganda-black {
+    border-color: var(--uganda-black);
+  }
+  .border-uganda-yellow {
+    border-color: var(--uganda-yellow);
+  }
+  .border-uganda-red {
+    border-color: var(--uganda-red);
+  }
+
+  /* Gradient combinations */
+  .bg-uganda-sunrise {
+    background: linear-gradient(
+      135deg,
+      var(--uganda-sun) 0%,
+      var(--uganda-red) 100%
+    );
+  }
+
+  .bg-uganda-sunset {
+    background: linear-gradient(
+      135deg,
+      var(--uganda-red) 0%,
+      var(--uganda-black) 100%
+    );
+  }
+
+  .bg-uganda-savannah {
+    background: linear-gradient(
+      135deg,
+      var(--uganda-sun) 0%,
+      var(--uganda-grass) 100%
+    );
+  }
+
+  .bg-uganda-horizon {
+    background: linear-gradient(
+      135deg,
+      var(--uganda-sky) 0%,
+      var(--uganda-sun) 100%
+    );
+  }
+
+  .bg-uganda-pride {
+    background: linear-gradient(
+      135deg,
+      var(--uganda-black) 0%,
+      var(--uganda-red) 33%,
+      var(--uganda-yellow) 66%,
+      var(--uganda-grass) 100%
+    );
+  }
+
+  /* Text gradients */
+  .text-gradient-uganda {
+    background: linear-gradient(
+      135deg,
+      var(--uganda-black) 0%,
+      var(--uganda-red) 50%,
+      var(--uganda-yellow) 100%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .text-gradient-sun {
+    background: linear-gradient(
+      135deg,
+      var(--uganda-sun) 0%,
+      var(--uganda-red) 100%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* Dark mode adaptations */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --uganda-cloud: #1a202c;
+    --uganda-cream: #2d3748;
+    --uganda-silver: #4a5568;
+  }
 }
