@@ -1,21 +1,21 @@
-"use client";
+"use client"
 
-import React, { useState, useEffect, useId } from "react";
+import React, { useState, useEffect, useId } from "react"
 
-import { motion } from "motion/react";
-import { cn } from "@/utils/cn";
+import { motion } from "motion/react"
+import { cn } from "@/lib/utils"
 
 export interface ContainerTextFlipProps {
   /** Array of words to cycle through in the animation */
-  words?: string[];
+  words?: string[]
   /** Time in milliseconds between word transitions */
-  interval?: number;
+  interval?: number
   /** Additional CSS classes to apply to the container */
-  className?: string;
+  className?: string
   /** Additional CSS classes to apply to the text */
-  textClassName?: string;
+  textClassName?: string
   /** Duration of the transition animation in milliseconds */
-  animationDuration?: number;
+  animationDuration?: number
 }
 
 export function ContainerTextFlip({
@@ -25,33 +25,32 @@ export function ContainerTextFlip({
   textClassName,
   animationDuration = 700,
 }: ContainerTextFlipProps) {
-  const id = useId();
-  const [currentWordIndex, setCurrentWordIndex] = useState(0);
-  const [width, setWidth] = useState(100);
-  const textRef = React.useRef(null);
+  const id = useId()
+  const [currentWordIndex, setCurrentWordIndex] = useState(0)
+  const [width, setWidth] = useState(100)
+  const textRef = React.useRef(null)
 
   const updateWidthForWord = () => {
     if (textRef.current) {
-      // Add some padding to the text width (30px on each side)
       // @ts-ignore
-      const textWidth = textRef.current.scrollWidth + 30;
-      setWidth(textWidth);
+      const textWidth = textRef.current.scrollWidth + 30
+      setWidth(textWidth)
     }
-  };
+  }
 
   useEffect(() => {
     // Update width whenever the word changes
-    updateWidthForWord();
-  }, [currentWordIndex]);
+    updateWidthForWord()
+  }, [currentWordIndex])
 
   useEffect(() => {
     const intervalId = setInterval(() => {
-      setCurrentWordIndex((prevIndex) => (prevIndex + 1) % words.length);
+      setCurrentWordIndex((prevIndex) => (prevIndex + 1) % words.length)
       // Width will be updated in the effect that depends on currentWordIndex
-    }, interval);
+    }, interval)
 
-    return () => clearInterval(intervalId);
-  }, [words, interval]);
+    return () => clearInterval(intervalId)
+  }, [words, interval])
 
   return (
     <motion.p
@@ -65,7 +64,7 @@ export function ContainerTextFlip({
         "shadow-[inset_0_-1px_#d1d5db,inset_0_0_0_1px_#d1d5db,_0_4px_8px_#d1d5db]",
         "dark:[background:linear-gradient(to_bottom,#374151,#1f2937)]",
         "dark:shadow-[inset_0_-1px_#10171e,inset_0_0_0_1px_hsla(205,89%,46%,.24),_0_4px_8px_#00000052]",
-        className,
+        className
       )}
       key={words[currentWordIndex]}
     >
@@ -100,5 +99,5 @@ export function ContainerTextFlip({
         </motion.div>
       </motion.div>
     </motion.p>
-  );
+  )
 }
