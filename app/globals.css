@@ -34,7 +34,7 @@
 @layer base {
   /* Custom color classes for easy usage */
   .bg-uganda-black {
-    background-color: var(--uganda-black);
+    background-color: var(--uganda-charcoal);
   }
   .bg-uganda-yellow {
     background-color: var(--uganda-yellow);
@@ -150,10 +150,10 @@
 }
 
 /* Dark mode adaptations */
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   :root {
     --uganda-cloud: #1a202c;
     --uganda-cream: #2d3748;
     --uganda-silver: #4a5568;
   }
-}
+} */

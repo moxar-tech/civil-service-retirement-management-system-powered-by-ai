@@ -347,7 +347,7 @@ export default function Home() {
                 </div>
                 <span className="text-white font-bold">U-Retire</span>
               </div>
-              <p className="text-sm">
+              <p className="text-sm text-white">
                 AI-powered retirement management for Uganda&apos;s civil
                 servants. Secure your future with intelligent planning.
               </p>
@@ -355,7 +355,7 @@ export default function Home() {
 
             <div>
               <h3 className="text-white font-semibold mb-4">Product</h3>
-              <ul className="space-y-2 text-sm">
+              <ul className="space-y-2 text-white text-sm">
                 <li>
                   <a
                     href="#features"
@@ -385,7 +385,7 @@ export default function Home() {
 
             <div>
               <h3 className="text-white font-semibold mb-4">Support</h3>
-              <ul className="space-y-2 text-sm">
+              <ul className="space-y-2 text-white text-sm">
                 <li>
                   <a
                     href="#"
@@ -415,7 +415,7 @@ export default function Home() {
 
             <div>
               <h3 className="text-white font-semibold mb-4">Legal</h3>
-              <ul className="space-y-2 text-sm">
+              <ul className="space-y-2 text-white text-sm">
                 <li>
                   <a
                     href="#"
@@ -444,7 +444,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="border-t border-uganda-charcoal mt-8 pt-8 text-center text-sm">
+          <div className="border-t text-white border-uganda-charcoal mt-8 pt-8 text-center text-sm">
             <p>
               &copy; 2024 U-Retire. Proudly serving Uganda&apos;s Civil Service.
             </p>
