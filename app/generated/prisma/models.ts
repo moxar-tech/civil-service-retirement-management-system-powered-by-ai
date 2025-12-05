@@ -11,4 +11,5 @@
 export type * from './models/Account.ts'
 export type * from './models/Session.ts'
 export type * from './models/User.ts'
+export type * from './models/Profile.ts'
 export type * from './commonInputTypes.ts'
